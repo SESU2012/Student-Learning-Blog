@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+      <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Learning Blog</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">SL</div>
+        <div>
+          <h1>Student Learning Blog</h1>
+          <div class="tag">Short lessons. Big ideas. Hands-on.</div>
+        </div>
+      </div>
+
+      <div class="search">
+        <input id="search" placeholder="Search posts, e.g. 'react' or 'atoms'" />
+      </div>
+
+      <div class="categories">
+        <h3>Categories</h3>
+        <div class="cat-list">
+          <div class="cat active" data-cat="All">All</div>
+          <div class="cat" data-cat="Science">Science</div>
+          <div class="cat" data-cat="Coding">Coding</div>
+          <div class="cat" data-cat="Lifestyle">Lifestyle</div>
+        </div>
+      </div>
+
+      <div class="filters">
+        <button id="new-post" class="btn primary">+ New Post</button>
+        <button id="clear-filters" class="btn">Reset</button>
+      </div>
+
+      <div style="margin-top:18px">
+        <div style="font-size:13px;color:var(--muted)">About</div>
+        <p style="margin:8px 0 0;color:var(--muted);font-size:13px">A small student-run site with quick explainers and practical coding tutorials. Use the editor to add your own posts.</p>
+      </div>
+
+    </aside>
+
+    <main class="main">
+      <div class="hero">
+        <div class="hero-left">
+          <h2>Welcome — Learn something new today</h2>
+          <p>Short, clear lessons and mini-projects across Science, Coding and Lifestyle for students.</p>
+        </div>
+        <div class="hero-right">
+          <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=160&auto=format&fit=crop&crop=entropy" alt="hero">
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="sort">
+          Sort: <select id="sortSelect">
+            <option value="new">Newest</option>
+            <option value="old">Oldest</option>
+          </select>
+        </div>
+        <div style="margin-left:auto;color:var(--muted)">Showing <span id="count">0</span> posts</div>
+      </div>
+
+      <section class="grid" id="postsGrid">
+        <!-- Cards injected by JS -->
+      </section>
+
+      <footer>Made with ❤️ — Student Learning Blog</footer>
+    </main>
+  </div>
+
+  <!-- Modal reader & editor -->
+  <div class="modal" id="modal">
+    <div class="reader" role="dialog" aria-modal="true">
+      <button class="close" id="closeModal">Close ✕</button>
+      <div id="readerContent">
+        <!-- content injected -->
+      </div>
+    </div>
+  </div>
+
+  <template id="cardTpl">
+    <article class="card">
+      <div class="thumb"><img src="" alt=""></div>
+      <div class="meta">
+        <div class="kicker"></div>
+        <h3 class="title"></h3>
+        <p class="excerpt"></p>
+        <div class="row"><span class="date"></span><span class="read-more">Read</span></div>
+      </div>
+    </article>
+  </template>
+
+ <script src="script.js"></script>
+</body>
+</html>
